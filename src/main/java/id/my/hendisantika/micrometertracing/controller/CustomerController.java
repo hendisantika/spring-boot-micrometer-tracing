@@ -1,8 +1,10 @@
 package id.my.hendisantika.micrometertracing.controller;
 
+import id.my.hendisantika.micrometertracing.dto.CustomerDTO;
 import id.my.hendisantika.micrometertracing.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,4 +26,9 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
+    @GetMapping
+    public CustomerDTO getCustomer() {
+        log.info("API Request to get customer");
+        return customerService.getCustomer();
+    }
 }
