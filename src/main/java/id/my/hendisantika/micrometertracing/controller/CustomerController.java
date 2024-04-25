@@ -31,4 +31,12 @@ public class CustomerController {
         log.info("API Request to get customer");
         return customerService.getCustomer();
     }
+
+    @GetMapping("/async")
+    public String executeAsync() {
+        log.info("API Request before Async method call");
+        customerService.executeAsync();
+        log.info("API Request after Async method call");
+        return "Request accepted";
+    }
 }
