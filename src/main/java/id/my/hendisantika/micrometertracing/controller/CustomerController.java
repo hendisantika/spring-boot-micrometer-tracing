@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/")
+@RequestMapping("/test")
 @RequiredArgsConstructor
 public class CustomerController {
 
