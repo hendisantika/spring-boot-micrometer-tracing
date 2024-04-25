@@ -2,6 +2,7 @@ package id.my.hendisantika.micrometertracing.service;
 
 import id.my.hendisantika.micrometertracing.dto.CustomerDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -20,5 +21,11 @@ public class CustomerService {
     public CustomerDTO getCustomer() {
         log.info("Service request to get customer");
         return new CustomerDTO("John Doe");
+    }
+
+    @Async
+    public void executeAsync() {
+        log.info("Start Async method");
+        //do something
     }
 }
